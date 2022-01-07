@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="aospm" fetch="https://github.com/aospm" />
+
+  <!-- Repositories -->
+
+  <!-- SDM845 generic device repo -->
+  <project path="device/generic/sdm845" name="android_device_generic_sdm845" remote="aospm" revision="35f873ec6f3211ffbaaa21ad5498c47d3614db52" upstream="main" dest-branch="main" groups="default,local::aospm" />
+
+  <project path="external/tinyhal" name="tinyhal" remote="aospm" revision="2a107fa49ef5dd3347cd475860b1e9999465e263" upstream="master" dest-branch="master" groups="default,local::aospm" />
+  <project path="external/vibrator-ff" name="external_vibrator-ff" remote="aospm" revision="aa1fd8d7cc1b59167dfe5ed9f802c9ed2f3f3fb9" upstream="main" dest-branch="main" groups="default,local::aospm" />
+
+  <project path="manifest" name="platform_manifest" revision="aospm/booting" remote="aospm" groups="default" />
+
+  <project path="system/core" name="platform_system_core" remote="aospm" revision="b7135626ae213d6ad0d9f2e7d713b0a041a66944" upstream="master" dest-branch="master" groups="default,local::aospm" />
+</manifest>

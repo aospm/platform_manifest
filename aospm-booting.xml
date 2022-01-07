@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/"/>
-  <remote name="aospm" fetch="https://github.com/aospm"/>
   
   <default remote="aosp" revision="master" sync-j="4"/>
   
   <manifest-server url="http://android-smartsync.corp.google.com/android.googlesource.com/manifestserver"/>
   
-  <project name="android_device_generic_sdm845" path="device/generic/sdm845" remote="aospm" revision="35f873ec6f3211ffbaaa21ad5498c47d3614db52" upstream="main" dest-branch="main" groups="default,local::aospm"/>
   <project name="device/amlogic/yukawa" revision="04507b10092566b34849ab3eb78e3930b5230b02" upstream="master" dest-branch="master" groups="device,yukawa,pdk"/>
   <project name="device/amlogic/yukawa-kernel" revision="2b4574e6310a711ad15198e9a1db4f5f6e78669b" upstream="master" dest-branch="master" groups="device,yukawa,pdk" clone-depth="2"/>
   <project name="device/common" revision="db31e911986c1e6d419d117a2b9e6c2133901c6d" upstream="master" dest-branch="master" groups="pdk-cw-fs,pdk"/>
@@ -73,7 +71,6 @@
   <project name="device/sample" revision="4406a5d33fc724785908413b236ae365d10b50a9" upstream="master" dest-branch="master" groups="pdk"/>
   <project name="device/ti/beagle-x15" path="device/ti/beagle_x15" revision="b96fc216575927fa1467782d14dc778cee0e7036" upstream="master" dest-branch="master" groups="device,beagle_x15,pdk"/>
   <project name="device/ti/beagle-x15-kernel" path="device/ti/beagle_x15-kernel" revision="7f0d0dcd4051396d20c7853f6dccb5cd258406af" upstream="master" dest-branch="master" groups="device,beagle_x15,pdk" clone-depth="1"/>
-  <project name="external_vibrator-ff" path="external/vibrator-ff" remote="aospm" revision="aa1fd8d7cc1b59167dfe5ed9f802c9ed2f3f3fb9" upstream="main" dest-branch="main" groups="default,local::aospm"/>
   <project name="kernel/configs" revision="279960205f7b99455dbab3c040a69bb420382e01" upstream="master" dest-branch="master" groups="vts,pdk"/>
   <project name="kernel/prebuilts/4.19/arm64" revision="1210e8bc62ec13dad2f977cbcb4bc472dd27becc" upstream="master" dest-branch="master" groups="pdk" clone-depth="1"/>
   <project name="kernel/prebuilts/5.10/arm64" revision="acb0dc93dbdd45ffbbb56dd7de87c01f4d6b00ff" upstream="master" dest-branch="master" groups="pdk" clone-depth="1"/>
@@ -1117,11 +1114,12 @@
   <project name="platform/tools/tradefederation/prebuilts" path="tools/tradefederation/prebuilts" revision="a53611734a74ce1716c7d6281246998bce294208" upstream="master" dest-branch="master" groups="pdk,tradefed"/>
   <project name="platform/tools/treble" path="tools/treble" revision="ca4bbed3e7f3d37496acef9d2ef4c0384975ac78" upstream="master" dest-branch="master" groups="tools,pdk"/>
   <project name="platform/tools/trebuchet" path="tools/trebuchet" revision="07b133200e3c6b1c1ba27116e90109b1d2cc6a67" upstream="master" dest-branch="master" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs"/>
-  <project name="platform_system_core" path="system/core" remote="aospm" revision="b7135626ae213d6ad0d9f2e7d713b0a041a66944" upstream="master" dest-branch="master" groups="default,local::aospm"/>
-  <project name="tinyhal" path="external/tinyhal" remote="aospm" revision="2a107fa49ef5dd3347cd475860b1e9999465e263" upstream="master" dest-branch="master" groups="default,local::aospm"/>
   <project name="toolchain/benchmark" revision="8865b07dcd100bf8e90d4f24b9b44a93270ed047" upstream="master" dest-branch="master"/>
   <project name="toolchain/pgo-profiles" revision="a7a8e758386f21de9f4b6c796004c1130ea58384" upstream="master" dest-branch="master" groups="pdk"/>
   <project name="tools/platform-compat" revision="e11e803ab2c854e3be4649ce9f9af80b779578d8" upstream="master" dest-branch="master" groups="pdk-cw-fs,pdk-fs,pdk"/>
+
+  <!-- include aospm snippet -->
+  <include name="snippets/aospm.xml" />
   
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload"/>
   
